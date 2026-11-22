@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>研究工作流程管理系統（展示版）</title>
+  <title>研究工作流程管理系統(測試版)</title>
   <base href="./">
   <link rel="stylesheet" href="./static/css/gate.css">
-  <link rel="stylesheet" href="./static/css/showcase.css">
 </head>
 <body>
   <div class="gate-page">
     <div class="gate-hero">
-      <h1>研究工作流程管理系統（展示版）</h1>
-      <p>唯讀雲端展示 · 與本機站外觀相同，不含訓練與後台</p>
+      <h1>研究工作流程管理系統(測試版)</h1>
+      <p>請選擇進入方式</p>
     </div>
 
     <div class="gate-options">
-      <a class="gate-card" href="./app.html">
-        <span class="gate-title">進入展示站</span>
-        <span class="gate-desc">瀏覽應用、資料、建模、模擬規劃與分析結果</span>
-      </a>
-      <a class="gate-card" href="https://charles920721-cyber.github.io/tsmc-training-site/index.html" target="_blank" rel="noopener noreferrer">
-        <span class="gate-title">台積電訓練網站</span>
-        <span class="gate-desc">半導體教材與測驗（另開頁面）</span>
-      </a>
-    </div>
+      <button type="button" class="gate-card" id="guestBtn">
+        <span class="gate-title">訪客模式</span>
+        <span class="gate-desc">瀏覽工作流程與研究內容，無法編輯</span>
+      </button>
 
-    <p class="showcase-gate-note">
-      此站由本機研究成果快照產生，資料為匯出當下內容。開始訓練、登入編輯、樣本預覽與曲線檔案已關閉。
-    </p>
+      <div class="gate-card gate-card-form" id="loginCard">
+        <span class="gate-title">登入帳號</span>
+        <span class="gate-desc">使用帳號密碼登入，可編輯網站內容</span>
+        <form id="loginForm" class="gate-login-form">
+          <input type="text" id="loginUsername" placeholder="帳號" autocomplete="username" required>
+          <input type="password" id="loginPassword" placeholder="密碼" autocomplete="current-password" required>
+          <button type="submit" class="btn btn-primary">登入並進入</button>
+          <p class="gate-error" id="loginError"></p>
+        </form>
+      </div>
+    </div>
   </div>
+
+  <script src="./static/js/api-shim.js" data-showcase-base="./"></script>
+  <script src="./static/js/gate.js"></script>
 </body>
 </html>

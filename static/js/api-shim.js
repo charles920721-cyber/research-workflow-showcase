@@ -60,9 +60,12 @@
     const path = normalizePath(input);
 
     if (path.startsWith('/api/')) {
+      if (method === 'POST' && /^\/api\/auth\/guest\/?$/.test(path)) {
+        return jsonResponse({ message: '訪客模式', access_mode: 'guest', site_version: 'test' });
+      }
       if (method !== 'GET' && method !== 'HEAD') {
         return jsonResponse({
-          error: '展示版為唯讀，此操作已關閉',
+          error: '展示版為唯讀，請使用訪客模式進入',
           showcase: true,
         }, 403);
       }
