@@ -1,3 +1,8 @@
+.showcase-banner,
+div.showcase-banner {
+  display: none !important;
+}
+
 body.showcase-mode .admin-link,
 body.showcase-mode #sessionLogoutBtn,
 body.showcase-mode .pancreatic-script-editor,

@@ -20,10 +20,22 @@ function renderTestVersionApplicationExtras() {
     </a>`;
 }
 
+function removeShowcaseBanner() {
+  document.querySelectorAll('.showcase-banner').forEach((el) => el.remove());
+  document.querySelectorAll('body > div, body > p, body > section').forEach((el) => {
+    const text = (el.textContent || '').replace(/\s+/g, '');
+    if (text.includes('外觀與本機站相同') || text.includes('本機檔案預覽已關閉') || text.includes('展示版（唯讀）')) {
+      el.remove();
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  removeShowcaseBanner();
+
   const pill = document.getElementById('versionPill');
   if (pill) {
-    pill.textContent = '展示版';
+    pill.textContent = '測試版';
     pill.classList.add('is-test');
   }
   const home = document.getElementById('homeLink');
@@ -37,6 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (statusEl) {
     statusEl.classList.add('connected');
     const label = statusEl.querySelector('span:last-child');
-    if (label) label.textContent = '展示模式';
+    if (label) label.textContent = '已連線';
   }
 });
