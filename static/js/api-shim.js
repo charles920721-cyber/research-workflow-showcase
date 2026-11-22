@@ -2,6 +2,7 @@
   const BASE = document.querySelector('script[data-showcase-base]')?.dataset.showcaseBase
     || (document.querySelector('base')?.href || './');
   const root = new URL(BASE, window.location.href);
+  const originalFetch = window.fetch.bind(window);
 
   function dataUrl(name) {
     return new URL(`data/${name}`, root).href;
@@ -16,7 +17,7 @@
 
   async function fileResponse(name, fallback) {
     try {
-      const res = await fetch(dataUrl(name), { cache: 'no-store' });
+      const res = await originalFetch(dataUrl(name), { cache: 'no-store' });
       if (!res.ok) throw new Error(String(res.status));
       const text = await res.text();
       return new Response(text, {
@@ -28,6 +29,96 @@
       return jsonResponse({ error: '展示版無此資料', detail: String(err) }, 404);
     }
   }
+
+  let imageManifest = null;
+  let imageManifestPromise = null;
+
+  function ensureImageManifest() {
+    if (imageManifest) return Promise.resolve(imageManifest);
+    if (!imageManifestPromise) {
+      imageManifestPromise = originalFetch(dataUrl('image_manifest.json'), { cache: 'no-store' })
+        .then((res) => (res.ok ? res.json() : {}))
+        .then((data) => {
+          imageManifest = data || {};
+          return imageManifest;
+        })
+        .catch(() => {
+          imageManifest = {};
+          return imageManifest;
+        });
+    }
+    return imageManifestPromise;
+  }
+
+  function resolvePancreaticImageUrl(itemId, { run = 0, kind = 'curves', allRuns = false } = {}) {
+    const entry = (imageManifest || {})[itemId];
+    if (!entry || !entry.key) return '';
+    const folder = new URL(`images/${entry.key}/`, root).href;
+    if (allRuns && kind === 'curves') {
+      return entry.all_curves === false ? '' : `${folder}all_curves.png`;
+    }
+    const runNum = Number(run) || 0;
+    if (!runNum || (kind !== 'cm' && kind !== 'curves')) return '';
+    const runStr = String(runNum).padStart(2, '0');
+    return `${folder}Run_${runStr}_${kind}.png`;
+  }
+
+  window.showcasePancreaticImageUrl = function showcasePancreaticImageUrl(itemId, opts) {
+    return resolvePancreaticImageUrl(itemId, opts || {});
+  };
+  window.showcaseEnsureImageManifest = ensureImageManifest;
+  ensureImageManifest();
+
+  function rewritePancreaticImageElement(img) {
+    if (!img || img.dataset.showcaseImg === '1') return;
+    const raw = img.getAttribute('src') || '';
+    if (!raw.includes('/api/pancreatic/analysis/image')) return;
+    let params;
+    try {
+      params = new URL(raw, window.location.href).searchParams;
+    } catch {
+      return;
+    }
+    const next = resolvePancreaticImageUrl(params.get('item') || '', {
+      run: Number(params.get('run') || 0),
+      kind: (params.get('kind') || 'curves').toLowerCase(),
+      allRuns: params.get('all_runs') === '1',
+    });
+    if (!next) return;
+    img.dataset.showcaseImg = '1';
+    img.src = next;
+    img.addEventListener('load', () => {
+      const loading = img.parentElement?.querySelector('.pancreatic-all-runs-loading');
+      if (loading) loading.remove();
+    }, { once: true });
+  }
+
+  function scanPancreaticImages(rootEl) {
+    (rootEl || document).querySelectorAll?.('img[src*="/api/pancreatic/analysis/image"]')?.forEach(rewritePancreaticImageElement);
+  }
+
+  ensureImageManifest().then(() => {
+    scanPancreaticImages(document);
+    const obs = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.type === 'attributes' && m.target?.tagName === 'IMG') {
+          rewritePancreaticImageElement(m.target);
+          continue;
+        }
+        m.addedNodes?.forEach((node) => {
+          if (node.nodeType !== 1) return;
+          if (node.tagName === 'IMG') rewritePancreaticImageElement(node);
+          else scanPancreaticImages(node);
+        });
+      }
+    });
+    obs.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['src'],
+    });
+  });
 
   const READ_MAP = [
     [/^\/api\/auth\/status\/?$/, 'auth_status.json', { entered: true, can_edit: false, is_admin: false, user: null, access_mode: 'guest', site_version: 'test' }],
@@ -54,7 +145,6 @@
     }
   }
 
-  const originalFetch = window.fetch.bind(window);
   window.fetch = async (input, init = {}) => {
     const method = (init.method || (typeof input !== 'string' && input.method) || 'GET').toUpperCase();
     const path = normalizePath(input);
@@ -76,8 +166,19 @@
       if (path.startsWith('/api/datasets/') && path.includes('/preview/')) {
         return new Response('', { status: 404 });
       }
-      if (path.startsWith('/api/pancreatic/analysis/image') || path.startsWith('/api/pancreatic/analysis/log')) {
-        return jsonResponse({ error: '展示版未內嵌曲線／日誌檔' }, 404);
+      if (path.startsWith('/api/pancreatic/analysis/image')) {
+        await ensureImageManifest();
+        const url = new URL(typeof input === 'string' ? input : input.url, window.location.href);
+        const resolved = resolvePancreaticImageUrl(url.searchParams.get('item') || '', {
+          run: Number(url.searchParams.get('run') || 0),
+          kind: (url.searchParams.get('kind') || 'curves').toLowerCase(),
+          allRuns: url.searchParams.get('all_runs') === '1',
+        });
+        if (!resolved) return jsonResponse({ error: '展示版找不到訓練圖' }, 404);
+        return originalFetch(resolved, { cache: 'force-cache' });
+      }
+      if (path.startsWith('/api/pancreatic/analysis/log')) {
+        return jsonResponse({ error: '展示版未內嵌訓練日誌' }, 404);
       }
 
       if (/^\/api\/results\/analysis\/?$/.test(path)) {

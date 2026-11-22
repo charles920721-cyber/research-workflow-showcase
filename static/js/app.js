@@ -3810,8 +3810,19 @@ function renderPancreaticRunCurvesLegend(runCount) {
     <span class="pancreatic-curves-legend-note">共 ${runCount} 次 Run 疊加（維持原色）</span>`;
 }
 
+function pancreaticShowcaseImageUrl(itemId, opts) {
+  if (typeof window.showcasePancreaticImageUrl === 'function') {
+    const resolved = window.showcasePancreaticImageUrl(itemId, opts);
+    if (resolved) return resolved;
+  }
+  const params = new URLSearchParams({ item: itemId, kind: opts.kind || 'curves' });
+  if (opts.allRuns) params.set('all_runs', '1');
+  if (opts.run) params.set('run', String(opts.run));
+  return `/api/pancreatic/analysis/image?${params.toString()}`;
+}
+
 function renderPancreaticAllRunCurvesBody(itemId, runCount) {
-  const curvesUrl = `/api/pancreatic/analysis/image?item=${encodeURIComponent(itemId)}&kind=curves&all_runs=1`;
+  const curvesUrl = pancreaticShowcaseImageUrl(itemId, { kind: 'curves', allRuns: true });
 
   return `
     <div class="pancreatic-all-runs-header">
@@ -3828,8 +3839,8 @@ function renderPancreaticAllRunCurvesBody(itemId, runCount) {
 }
 
 function renderPancreaticRunDetailBody(itemId, runNum, runCount) {
-  const cmUrl = `/api/pancreatic/analysis/image?item=${encodeURIComponent(itemId)}&run=${runNum}&kind=cm`;
-  const curvesUrl = `/api/pancreatic/analysis/image?item=${encodeURIComponent(itemId)}&run=${runNum}&kind=curves`;
+  const cmUrl = pancreaticShowcaseImageUrl(itemId, { run: runNum, kind: 'cm' });
+  const curvesUrl = pancreaticShowcaseImageUrl(itemId, { run: runNum, kind: 'curves' });
   const canPrev = runNum > 1;
   const canNext = runNum < runCount;
 

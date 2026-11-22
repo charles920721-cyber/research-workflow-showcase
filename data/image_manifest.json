@@ -1,0 +1,324 @@
+{
+  "20260705 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重": {
+    "key": "5779fb0411b00a02",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260706 S+A MBS32 ROI資料裁切 lr0.00005 測試集原圖 啟用預訓練權重 LeakyReLU": {
+    "key": "3cb4e840fe5e7d0a",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260707 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 LeakyReLU": {
+    "key": "184c139faf5dad43",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260710 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 weight_decay0.001": {
+    "key": "e8bca373f1413d70",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260711 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 dropout0.6": {
+    "key": "534a06fa89659c43",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260712 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 LearnRateSchedule": {
+    "key": "31fd4b34a15195de",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260713 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層": {
+    "key": "abcb4e71d4ea5330",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260715 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001": {
+    "key": "bb96c32c705c7b9d",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260812 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 啟用資料增強": {
+    "key": "7328da150b2f83d1",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260918 S+M MBS32 ROI資料裁切 測試集原圖 啟用預訓練權重": {
+    "key": "94136a719e4e6a5f",
+    "all_curves": true,
+    "cm": 1,
+    "curves": 1,
+    "run_count": 1
+  },
+  "20260920 S+M MBS16 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 weight_decay0.001": {
+    "key": "71aefcbee9600ff1",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260921 S+M MBS16 ROI資料裁切 測試集原圖 啟用預訓練權重": {
+    "key": "c19c9fc40dbb0fd9",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260922 S+M MBS16 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重": {
+    "key": "e6dc55448399cc4f",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260923 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 freeze_epochs2": {
+    "key": "5590df2b80ff2a85",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260924 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 finetune_learning_rate3e-5_20260924_205502": {
+    "key": "49ba276e0ddc984a",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260928 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48": {
+    "key": "306bd78de026a61c",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260928 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6": {
+    "key": "0fb09981da2fc1e1",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260929 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding32 eta_min1e-6": {
+    "key": "09ecc3862192457b",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260930 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.05": {
+    "key": "c2a06d03bf2df80a",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20260930 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.02": {
+    "key": "c758455780a3017b",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261001 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.0015": {
+    "key": "2e50253f9eada159",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261001 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.015": {
+    "key": "3aeb576b77d53dc2",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261001 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.01": {
+    "key": "8eee445307a5d89c",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261002 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.008": {
+    "key": "bcf5f689b362edff",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261003 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.012": {
+    "key": "877c9c3d116f8896",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261006 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.01": {
+    "key": "19a6ca98ee7e30a0",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261007 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.4 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.01": {
+    "key": "0c4c5d74b6a76aa2",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261007 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.0005 crop_padding48 eta_min1e-6 label_smoothing0.01": {
+    "key": "34b469e7bf675e85",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261008 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6  crop_padding48 eta_min1e-6 label_smoothing0.01": {
+    "key": "ec6cdabe66e213cf",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261009 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate5e-6": {
+    "key": "3210c49040271724",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261010 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate3e-5": {
+    "key": "dad49a8583e1bd2b",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261010 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs3": {
+    "key": "07d91caa5c895dca",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261012 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.001 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs8": {
+    "key": "835f62a0358c158b",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261013 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.002 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "9bf4ff99ba13476c",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261013 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.003 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "6946052260135774",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261014 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.004 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "3142e86297e8768d",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261015 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 crop_padding48 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "d9ebcf135e07f90e",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261023 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 crop_padding64 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "d1bde5cf7e5eb44b",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261027 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 crop_padding96 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5_20261027_142655": {
+    "key": "e9851ec20e5eef21",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261027 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 crop_padding96 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5 num_workers2": {
+    "key": "42af24ccae2214d5",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261028 S+A MBS32 ROI資料裁切 lr0.0001 測試集原圖 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 crop_padding128 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "dde7152b9a806d14",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261029 S+A MBS32 lr0.0001 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "bbea5627fed386c1",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261030 S+A MBS16 lr0.0001 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5_20261031_214004": {
+    "key": "24ffda8ac9a3596c",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261101 S+A MBS8 lr0.0001 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "809765258dcd4333",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261103 S+A MBS4 lr0.0001 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "5bdf6b90c85bb53b",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  },
+  "20261103 S+A MBS1 lr0.0001 啟用預訓練權重 凍結預訓練特徵層 LearnRateSchedule dropout0.6 weight_decay0.005 eta_min1e-6 label_smoothing0.01 finetune_learning_rate1e-5 freeze_epochs5": {
+    "key": "d350b2de7bbab1ca",
+    "all_curves": true,
+    "cm": 10,
+    "curves": 10,
+    "run_count": 10
+  }
+}
