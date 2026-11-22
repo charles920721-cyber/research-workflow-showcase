@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>研究工作流程管理系統（展示版）</title>
+  <base href="./">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/showcase.css">
+</head>
+<body>
+  <div class="showcase-banner">展示版（唯讀）· 外觀與本機站相同 · 訓練／登入編輯／本機檔案預覽已關閉</div>
+
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">研究工作流程</h1>
+      <nav class="workflow-nav">
+        <button class="nav-btn active" data-step="application">
+          <span class="nav-label">1. 應用</span>
+        </button>
+        <button class="nav-btn" data-step="data">
+          <span class="nav-label">2. 資料</span>
+        </button>
+        <button class="nav-btn" data-step="modeling">
+          <span class="nav-label">3. 建模</span>
+        </button>
+        <button class="nav-btn" data-step="simulation">
+          <span class="nav-label">4. 模擬</span>
+        </button>
+        <button class="nav-btn" data-step="analysis">
+          <span class="nav-label">5. 分析</span>
+        </button>
+      </nav>
+      <div class="connection-status" id="connectionStatus">
+        <span class="status-dot"></span>
+        <span>展示模式</span>
+      </div>
+      <div class="session-bar" id="sessionBar">
+        <span class="version-pill is-test" id="versionPill">展示版</span>
+        <span class="session-label" id="sessionLabel">訪客模式</span>
+        <button type="button" class="session-logout-btn" id="sessionLogoutBtn" title="登出" hidden>登出</button>
+      </div>
+      <a href="#" class="admin-link" id="adminLink" hidden>管理</a>
+      <a href="./index.html" class="home-link" id="homeLink" title="返回入口">首頁</a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section id="step-application" class="step-panel active">
+      <div class="panel-header">
+        <h2>選擇研究應用</h2>
+        <p>請選擇您目前正在進行的研究項目</p>
+      </div>
+      <div class="app-cards" id="appCards"></div>
+      <div class="selected-app-info" id="selectedAppInfo" style="display:none;">
+        <h3 id="selectedAppName"></h3>
+        <p id="selectedAppDesc"></p>
+        <div class="class-tags" id="classTags"></div>
+      </div>
+      <div id="testVersionApplicationExtras" class="test-version-application-extras" hidden></div>
+    </section>
+
+    <section id="step-data" class="step-panel">
+      <div class="panel-header">
+        <h2>資料集</h2>
+        <p id="datasetDesc">請先選擇應用項目</p>
+      </div>
+      <div class="dataset-sources" id="datasetSources"></div>
+      <div class="dataset-meta" id="datasetMeta"></div>
+      <div class="dataset-references" id="datasetReferences"></div>
+      <div class="dataset-stats" id="datasetStats"></div>
+      <div class="sample-filter" id="sampleFilter" style="display:none;">
+        <button class="filter-btn active" data-category="all">全部</button>
+      </div>
+      <div class="image-grid" id="imageGrid"></div>
+      <div class="image-preview" id="imagePreview" style="display:none;">
+        <button class="close-btn" onclick="closeImagePreview()">✕</button>
+        <div class="preview-content">
+          <div class="preview-image" id="previewImage"></div>
+          <div class="preview-info" id="previewInfo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-modeling" class="step-panel">
+      <div class="panel-header">
+        <h2>模型設定</h2>
+        <p>目前使用的架構、優化器及超參數</p>
+      </div>
+      <div class="model-config" id="modelConfig">
+        <p class="placeholder-text">請先選擇應用項目</p>
+      </div>
+      <div class="covid-model-extra" id="covidModelExtra"></div>
+      <div class="alternatives-section" id="alternativesSection" style="display:none;">
+        <h3>其他組合方案</h3>
+        <div class="alt-cards" id="altCards"></div>
+      </div>
+    </section>
+
+    <section id="step-simulation" class="step-panel">
+      <div class="panel-header">
+        <h2>訓練模擬</h2>
+        <p>監控模型訓練進度</p>
+      </div>
+      <div class="sim-controls" id="simControls">
+        <button class="btn btn-primary" id="startTrainingBtn" type="button">▶ 開始新 RUN</button>
+        <select id="configSelect" class="config-select">
+          <option value="default">使用預設設定</option>
+        </select>
+      </div>
+      <div class="covid-simulation-plan" id="covidSimulationPlan"></div>
+      <div class="runs-container" id="runsContainer">
+        <p class="placeholder-text">尚無訓練 RUN，點擊「開始新 RUN」啟動</p>
+      </div>
+    </section>
+
+    <section id="step-analysis" class="step-panel">
+      <div class="panel-header">
+        <h2>結果分析</h2>
+        <p>各組合評估指標、最佳值及 RUN 平均</p>
+      </div>
+      <div class="analysis-summary" id="analysisSummary"></div>
+      <div class="covid-run-summary" id="covidRunSummary"></div>
+      <div class="best-metrics" id="bestMetrics"></div>
+      <div class="results-table-wrap">
+        <table class="results-table" id="resultsTable">
+          <thead id="resultsTableHead">
+            <tr>
+              <th>RUN ID</th>
+              <th>架構</th>
+              <th>優化器</th>
+              <th>Accuracy</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1 Score</th>
+              <th>AUC</th>
+              <th>完成時間</th>
+            </tr>
+          </thead>
+          <tbody id="resultsTableBody">
+            <tr><td colspan="9" class="placeholder-text">尚無結果資料</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="pancreaticPkPaperSection" class="pancreatic-pk-paper-section" style="display:none">
+        <h3 class="section-subtitle">PK Paper</h3>
+        <div id="pancreaticPkPaperContent"></div>
+      </div>
+      <div id="pancreaticFuturePlansSection" class="pancreatic-future-plans-section" style="display:none">
+        <h3 class="section-subtitle">未來規劃</h3>
+        <div class="pancreatic-future-plans-box">
+          <div id="pancreaticFuturePlansContent" class="pancreatic-future-plans-content"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modelDetailModal" class="model-detail-modal" aria-hidden="true">
+    <div class="model-detail-card" role="dialog" aria-modal="true">
+      <button type="button" class="model-detail-close" id="modelDetailClose" aria-label="關閉">✕</button>
+      <h2 class="model-detail-title" id="modelDetailTitle"></h2>
+      <div class="model-detail-body" id="modelDetailBody"></div>
+    </div>
+  </div>
+
+  <script src="./static/js/api-shim.js" data-showcase-base="./"></script>
+  <script src="./static/js/pancreatic-sim-plan-data.js"></script>
+  <script src="./static/js/app.js"></script>
+  <script src="./static/js/showcase-boot.js"></script>
+</body>
+</html>

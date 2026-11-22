@@ -1,0 +1,40 @@
+body.showcase-mode .admin-link,
+body.showcase-mode #sessionLogoutBtn,
+body.showcase-mode .pancreatic-script-editor,
+body.showcase-mode #pancreaticScriptEditor,
+body.showcase-mode .pancreatic-script-new,
+body.showcase-mode .pancreatic-train-actions,
+body.showcase-mode .training-action-btns,
+body.showcase-mode .btn-start-training,
+body.showcase-mode .btn-edit-script,
+body.showcase-mode .btn-stop-training,
+body.showcase-mode .btn-view-log,
+body.showcase-mode .training-progress-row,
+body.showcase-mode button[data-action="run"],
+body.showcase-mode .btn-run-training,
+body.showcase-mode #pancreaticAiSection,
+body.showcase-mode .pancreatic-probe-btn,
+body.showcase-mode .pancreatic-log-btn,
+body.showcase-mode .col-action,
+body.showcase-mode #simControls,
+body.showcase-mode #startTrainingBtn {
+  display: none !important;
+}
+
+.showcase-banner {
+  background: rgba(245, 158, 11, 0.12);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.86rem;
+}
+
+.showcase-gate-note {
+  max-width: 900px;
+  width: 100%;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.6;
+}

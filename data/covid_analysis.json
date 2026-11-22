@@ -1,0 +1,686 @@
+{
+  "_help": "完全手動編輯此檔案即可自訂分析頁。columns 為表頭；rows 每列用 cells（字串陣列，順序對應 columns）；section 列用 {\"section\":\"標題\"}；highlight:true 可高亮該列。summary_cards、run_summary、best_metric 可選。",
+  "best_metric": {
+    "detail": "小規模最佳 · MobileNetV2 · Adam · InitialLearnRate 0.0001 · MiniBatchSize 64 · L2Regularization 0.002 · LearnRateDropFactor 0.01",
+    "label": "最高測試準確度",
+    "value": "98.71%"
+  },
+  "run_summary": {
+    "architecture_screening_runs": 80,
+    "large_scale_runs": 500,
+    "small_scale_runs": 280,
+    "total_runs": 860
+  },
+  "summary_cards": [
+    {
+      "label": "架構篩選 RUN",
+      "value": "80"
+    },
+    {
+      "label": "小規模 RUN",
+      "value": "280"
+    },
+    {
+      "label": "大規模 RUN",
+      "value": "500"
+    },
+    {
+      "label": "小規模最佳測試準確度",
+      "value": "98.71%"
+    },
+    {
+      "label": "大規模平均測試準確度",
+      "value": "97.56%"
+    },
+    {
+      "label": "大規模平均驗證準確度",
+      "value": "97.35%"
+    }
+  ],
+  "table": {
+    "columns": [
+      "階段",
+      "規模",
+      "RUN 數",
+      "架構",
+      "優化器",
+      "測試準確度",
+      "驗證準確度"
+    ],
+    "rows": [
+      {
+        "section": "架構×優化器篩選（80 RUN）"
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "MobileNetV2",
+          "SGDM",
+          "94.38%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "97.10%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.18%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "EfficientNet-B0",
+          "SGDM",
+          "99.17%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "EfficientNet-B0",
+          "Adam",
+          "98.34%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "EfficientNet-B0",
+          "RMSprop",
+          "89.67%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "Xception",
+          "SGDM",
+          "99.58%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "10",
+          "Xception",
+          "Adam",
+          "98.34%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "架構×優化器篩選",
+          "架構篩選",
+          "0",
+          "Xception",
+          "RMSprop",
+          "未完成",
+          "-"
+        ]
+      },
+      {
+        "section": "InitialLearnRate 調參（60 RUN · 固定 MobileNetV2）"
+      },
+      {
+        "cells": [
+          "InitialLearnRate 0.01",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "78.02%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "InitialLearnRate 0.001",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "96.05%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "InitialLearnRate 0.0001",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "96.98%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "InitialLearnRate 1e-8",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "50.72%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "InitialLearnRate 0.01",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "51.61%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "InitialLearnRate 0.001",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "93.50%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "InitialLearnRate 0.0001",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.23%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "InitialLearnRate 1e-8",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "50.72%",
+          "-"
+        ]
+      },
+      {
+        "section": "MiniBatchSize 調參（60 RUN · 固定 MobileNetV2）"
+      },
+      {
+        "cells": [
+          "MiniBatchSize 8",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "95.58%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "MiniBatchSize 64",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "96.98%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "MiniBatchSize 96",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "98.39%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "MiniBatchSize 128",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "97.46%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "MiniBatchSize 8",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "96.20%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "MiniBatchSize 64",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.23%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "MiniBatchSize 96",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "97.78%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "MiniBatchSize 128",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "97.10%",
+          "-"
+        ]
+      },
+      {
+        "section": "L2Regularization 調參（60 RUN · 固定 MobileNetV2）"
+      },
+      {
+        "cells": [
+          "L2Regularization 0.002",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "97.65%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "L2Regularization 0.003",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "98.02%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "L2Regularization 0.004",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "96.98%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "L2Regularization 0.008",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "97.34%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "L2Regularization 0.002",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.39%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "L2Regularization 0.003",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.02%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "L2Regularization 0.004",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.23%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "L2Regularization 0.008",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "97.90%",
+          "-"
+        ]
+      },
+      {
+        "section": "LearnRateDropFactor 調參（40 RUN · 固定 MobileNetV2）"
+      },
+      {
+        "cells": [
+          "LearnRateDropFactor 0.01",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "98.38%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropFactor 0.1",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "96.98%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropFactor 1",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "97.86%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropFactor 0.01",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.26%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropFactor 0.1",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.23%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropFactor 1",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "96.49%",
+          "-"
+        ]
+      },
+      {
+        "section": "LearnRateDropPeriod 調參（20 RUN · 固定 MobileNetV2）"
+      },
+      {
+        "cells": [
+          "LearnRateDropPeriod 20",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "96.98%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropPeriod 40",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "Adam",
+          "97.62%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropPeriod 20",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "98.23%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "LearnRateDropPeriod 40",
+          "小規模",
+          "10",
+          "MobileNetV2",
+          "RMSprop",
+          "96.17%",
+          "-"
+        ]
+      },
+      {
+        "section": "混合調參（40 RUN · 固定 MobileNetV2）"
+      },
+      {
+        "cells": [
+          "混合調參（第一輪）· ILR 0.0001 · MBS 64 · L2 0.002 · LRDF 0.01",
+          "小規模",
+          "20",
+          "MobileNetV2",
+          "Adam",
+          "98.71%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "混合調參（第一輪）· ILR 0.0001 · MBS 128 · L2 0.002 · LRDF 0.01",
+          "小規模",
+          "20",
+          "MobileNetV2",
+          "RMSprop",
+          "96.25%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "混合調參（第二輪）· ILR 0.0001 · MBS 128 · L2 0.003 · LRDF 0.01 · LRDP 40",
+          "小規模",
+          "20",
+          "MobileNetV2",
+          "Adam",
+          "97.90%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "混合調參（第二輪）· ILR 0.0001 · MBS 64 · L2 0.002 · LRDF 0.01 · LRDP 20",
+          "小規模",
+          "20",
+          "MobileNetV2",
+          "RMSprop",
+          "97.70%",
+          "-"
+        ]
+      },
+      {
+        "section": "小規模 / 大規模總結"
+      },
+      {
+        "cells": [
+          "小規模最佳（混合調參）",
+          "小規模",
+          "280",
+          "MobileNetV2",
+          "Adam",
+          "98.71%",
+          "-"
+        ],
+        "highlight": true
+      },
+      {
+        "cells": [
+          "大規模平均",
+          "大規模",
+          "500",
+          "MobileNetV2",
+          "Adam",
+          "97.56%",
+          "97.35%"
+        ]
+      },
+      {
+        "section": "對照論文比較"
+      },
+      {
+        "cells": [
+          "本專題（小規模）",
+          "",
+          "",
+          "MobileNetV2",
+          "Adam",
+          "98.71%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "本專題（大規模）",
+          "",
+          "",
+          "MobileNetV2",
+          "Adam",
+          "97.56%",
+          "97.35%"
+        ]
+      },
+      {
+        "cells": [
+          "論文 A [2]",
+          "",
+          "",
+          "MobileNet",
+          "Adam",
+          "100.00%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "論文 B [3]",
+          "",
+          "",
+          "EfficientNet",
+          "Adam",
+          "98.99%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "論文 C [4]",
+          "",
+          "",
+          "DenseNet201",
+          "Adam",
+          "97.00%",
+          "-"
+        ]
+      },
+      {
+        "cells": [
+          "論文 D [5]",
+          "",
+          "",
+          "DenseNet/ResNet/Xception",
+          "Adam",
+          "97.30%",
+          "-"
+        ]
+      }
+    ]
+  }
+}
